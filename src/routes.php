@@ -15,14 +15,14 @@ $app->get('/ask',
     ViewCtrl::class . ':renderAsk');
 
 /**
- * PUT /api/newquestion
+ * POST /api/newquestion
  */
-$app->put('/api/newquestion', 
+$app->post('/api/newquestion', 
     ViewCtrl::class . ':newQuestion');
 
 /**
- * PATCH /api/ratequestion/[id]
+ * POST /api/ratequestion/[id]
  */
-$app->patch('/api/ratequestion/{id}', 
+$app->post('/api/ratequestion/{id}', 
     ViewCtrl::class . ':rateQuestion');
 

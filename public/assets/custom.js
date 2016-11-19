@@ -1,6 +1,6 @@
 $('#ask-form').submit(function(e){
     $.ajax({
-        type: "PUT",
+        type: "POST",
         url: "/api/newquestion",
         data: $(this).serialize(),
         success: function(data){
@@ -18,7 +18,7 @@ function rateQuestion(id){
     console.log(id)
     $('#q-button-' + id).prop('disabled', true);
     $.ajax({
-        type: "PATCH",
+        type: "POST",
         url: "/api/ratequestion/" + id,
         success: function(data){
             console.log(data)
