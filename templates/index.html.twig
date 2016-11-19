@@ -30,13 +30,13 @@
     </div>
     <div class="row" style="margin-top: 50px;">
       <div class="col-sm-offset-1 col-sm-10">
-        {% for q in questions %}
+        <!--{% for q in questions %}
           <div class="row">
           <div class="col-sm-2 col-xs-2">
             <span>{{ candidates[q.target] }}</span><br><span>{{ categories[q.category] }}</span>
           </div>
           <div class="col-sm-6 col-xs-10">
-            <h4>{{ q.text }}</h4>
+            <h4 style="word-break: break-all;">{{ q.text }}</h4>
           </div>
           <div class="col-sm-2 col-xs-6" style="text-align: center;">
             <h2 id="q-rate-{{ q.id }}">{{ q.rate }}</h2>
@@ -45,8 +45,42 @@
             <button id="q-button-{{ q.id }}" type="button" class="btn btn-xs btn-success" style="margin-top: 10px; width: 50px; height: 50px;" onclick="rateQuestion({{ q.id }})">Vote!</button>
           </div>
         </div>
-        {% endfor %}
+        {% endfor %}-->
+        <div class="row">
+          <div class="col-xs-12" style="text-align: center; margin-bottom: 40px;">
+            <h1>LES QUESTIONS</h1>
+            <h3>DE LA SEMAINE</h3>
+          </div>
+          <div class="col-sm-4" style="text-align: center; padding: 0 30px;">
+            <div class="topBoxes">
+              <div style="text-align: left; border-bottom: solid 1px; margin-bottom: 10px;">{{ categories[questions[0].category] }}</div>
+              <div>POUR</div>
+              <div>{{ candidates[questions[0].target] }}</div>
+              <div style="padding: 15% 0;"><h4 style="word-break: break-all;">&ldquo;{{ questions[0].text }}&rdquo;</h4></div>
+            </div>
+            <button id="q-button-{{ questions[0].id }}" type="button" class="btn btnUncheck" style="margin-top: 10px; width: 100px;" onclick="rateQuestion({{ questions[0].id }})"><strong id="q-rate-{{ questions[0].id }}">{{ questions[0].rate }}</strong></button>
+          </div>
+          <div class="col-sm-4" style="text-align: center; padding: 0 30px;">
+            <div class="topBoxes">
+              <div style="text-align: left; border-bottom: solid 1px; margin-bottom: 10px;">{{ categories[questions[1].category] }}</div>
+              <div>POUR</div>
+              <div>{{ candidates[questions[1].target] }}</div>
+              <div style="padding: 15% 0;"><h4 style="word-break: break-all;">&ldquo;{{ questions[1].text }}&rdquo;</h4></div>
+            </div>
+            <button id="q-button-{{ questions[1].id }}" type="button" class="btn btnUncheck" style="margin-top: 10px; width: 100px;" onclick="rateQuestion({{ questions[1].id }})"><strong id="q-rate-{{ questions[1].id }}">{{ questions[1].rate }}</strong></button>
+          </div>
+          <div class="col-sm-4" style="text-align: center; padding: 0 30px;">
+            <div class="topBoxes">
+              <div style="text-align: left; border-bottom: solid 1px; margin-bottom: 10px;">{{ categories[questions[2].category] }}</div>
+              <div>POUR</div>
+              <div>{{ candidates[questions[2].target] }}</div>
+              <div style="padding: 15% 0;"><h4 style="word-break: break-all;">&ldquo;{{ questions[2].text }}&rdquo;</h4></div>
+            </div>
+            <button id="q-button-{{ questions[2].id }}" type="button" class="btn btnUncheck" style="margin-top: 10px; width: 100px;" onclick="rateQuestion({{ questions[2].id }})"><strong id="q-rate-{{ questions[2].id }}">{{ questions[2].rate }}</strong></button>
+          </div>
+        </div>
       </div>
+      
     </div>
   </div>
 

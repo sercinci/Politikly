@@ -4,8 +4,7 @@ $('#ask-form').submit(function(e){
         url: "/api/newquestion",
         data: $(this).serialize(),
         success: function(data){
-            console.log(data);
-            location.href = "/";
+            location.href = "/questions";
         },
         error: function(data){
             console.log(data)
@@ -15,22 +14,39 @@ $('#ask-form').submit(function(e){
 });
 
 function rateQuestion(id){
-    console.log(id)
     $('#q-button-' + id).prop('disabled', true);
     $.ajax({
         type: "POST",
         url: "/api/ratequestion/" + id,
         success: function(data){
-            console.log(data)
             $('#q-rate-' + id).text(data.rate);
-            setTimeout(function(){
-              $('#q-button-' + id).prop('disabled', false);
-            }, 1000);
+            $('#q-button-' + id).removeClass('btnUncheck')
+                .addClass('btnCheck');
         },
         error: function(data){
             console.log(data)
             setTimeout(function(){
               $('#q-button-' + id).prop('disabled', false);
+            }, 1000);
+        }
+    });
+}
+
+function rateAnswer(id){
+    $('#a-button-' + id).prop('disabled', true);
+    $.ajax({
+        type: "POST",
+        url: "/api/rateanswer/" + id,
+        success: function(data){
+            $('#a-rate-' + id).text(data.rate);
+            setTimeout(function(){
+              $('#a-button-' + id).prop('disabled', false);
+            }, 1000);
+        },
+        error: function(data){
+            console.log(data)
+            setTimeout(function(){
+              $('#a-button-' + id).prop('disabled', false);
             }, 1000);
         }
     });

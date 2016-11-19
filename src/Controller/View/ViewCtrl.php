@@ -15,7 +15,12 @@ class ViewCtrl
         'Alain Jupé',
         'Marine Lepen',
         'Emmanuel Macron',
-        'Jean Luc Mélanchon'
+        'Jean Luc Mélanchon',
+        'Enmarche',
+        'Europe Écologieles Verts',
+        'Le Front National',
+        'Les Républicains',
+        'Parti Socialiste'
     );
     protected $categories = array(
         'Chômage',
@@ -48,11 +53,23 @@ class ViewCtrl
         ]);
     }
 
-    public function renderAsk($req, $res, $arg)
+    public function renderQuestions($req, $res, $arg)
     {
-        return $this->view->render($res, 'ask.html.twig', [
+        $questions = Question::all()->sortByDesc('rate');
+        return $this->view->render($res, 'question.html.twig', [
             'candidates' => $this->candidates,
-            'categories' => $this->categories
+            'categories' => $this->categories,
+            'questions' => $questions
+        ]);
+    }
+
+    public function renderAnswers($req, $res, $arg)
+    {
+        $answers = Answer::all()->sortByDesc('rate');
+        return $this->view->render($res, 'answer.html.twig', [
+            'candidates' => $this->candidates,
+            'categories' => $this->categories,
+            'answers' => $answers
         ]);
     }
 

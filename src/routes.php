@@ -9,10 +9,16 @@ $app->get('/',
     ViewCtrl::class . ':renderIndex');
 
 /**
- * GET /ask
+ * GET /questions
  */
-$app->get('/ask', 
-    ViewCtrl::class . ':renderAsk');
+$app->get('/questions', 
+    ViewCtrl::class . ':renderQuestions');
+
+/**
+ * GET /answers
+ */
+$app->get('/answers', 
+    ViewCtrl::class . ':renderAnswers');
 
 /**
  * POST /api/newquestion
@@ -26,3 +32,8 @@ $app->post('/api/newquestion',
 $app->post('/api/ratequestion/{id}', 
     ViewCtrl::class . ':rateQuestion');
 
+/**
+ * POST /api/rateanswer/[id]
+ */
+$app->post('/api/rateanswer/{id}', 
+    ViewCtrl::class . ':rateAnswer');

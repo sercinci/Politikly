@@ -1,0 +1,29 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Politik - Answers{% endblock %}
+
+{% block content %}
+  {% include "menu.html.twig" with {'page': 'answers'} %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-offset-1 col-sm-10">
+        {% for a in answers %}
+          <div class="row">
+          <div class="col-sm-2 col-xs-2">
+            <span>{{ candidates[a.question.target] }}</span><br><span>{{ categories[a.question.category] }}</span>
+          </div>
+          <div class="col-sm-6 col-xs-10">
+            <h4 style="word-break: break-all;">{{ q.text }}</h4>
+          </div>
+          <div class="col-sm-2 col-xs-6" style="text-align: center;">
+            <h2 id="a-rate-{{ a.id }}">{{ a.rate }}</h2>
+          </div>
+          <div class="col-sm-2 col-xs-6" style="text-align: center;">
+            <button id="a-button-{{ a.id }}" type="button" class="btn btn-xs btn-success" style="margin-top: 10px; width: 50px; height: 50px;" onclick="rateAnswer({{ a.id }})">Vote!</button>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

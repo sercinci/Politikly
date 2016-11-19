@@ -1,0 +1,20 @@
+.topBoxes {
+    -webkit-box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.4);
+    box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.4);
+    height: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.btnUncheck {
+    background-color: #FFFFFF;
+    border-color: #3db39e;
+    color: #3db39e;
+}
+
+.btnCheck {
+    background-color: #3db39e;
+    border-color: #3db39e;
+    color: #FFFFFF;
+}
