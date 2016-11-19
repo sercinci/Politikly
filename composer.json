@@ -1,0 +1,37 @@
+{
+    "name": "politik",
+    "description": "Politik web platform",
+    "keywords": ["startupweekend", "strasbourg", "2016"],
+    "homepage": "http://politik.co",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Federico Ercole",
+            "email": "federico_ercole91@yahoo.it",
+            "homepage": "http://github.com/sercinci"
+        }
+    ],
+    "autoload" : {
+        "psr-4" : {
+             "Controller\\" : "src/Controller",
+             "Entity\\": "src/Entity"
+        },
+        "classmap" : [
+            "src/Entity",
+            "src/Controller"
+        ]
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "slim/slim": "^3.5",
+        "monolog/monolog": "^1.17",
+        "illuminate/database": "^5.2",
+        "slim/twig-view": "^2.1"
+    },
+	"scripts": {
+        "start": "php -S 0.0.0.0:8080 -t public public/index.php"
+	},
+    "config": {
+        "process-timeout": 0
+    }
+}

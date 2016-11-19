@@ -1,0 +1,53 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Politik{% endblock %}
+
+{% block content %}
+  {% include "menu.html.twig" %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-offset-1 col-sm-10">
+        <form id="ask-form">
+          <div class="form-group">
+            <label class="formLabel">Question</label>
+            <input type="text" class="form-control" max="200" placeholder="Question (Max 200 charactères)" name="text" required>
+            <label class="formLabel">Candidats:</label>
+            <select name="target">
+              {% for cand in candidates %}
+                <option value="{{ loop.index0 }}">{{cand}}</option>
+              {% endfor %}
+            </select><br>
+            <label class="formLabel">Categories:</label>
+            <select name="category">
+              {% for cat in categories %}
+                <option value="{{ loop.index0 }}">{{cat}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Posez vos questions!</button>
+        </form> 
+      </div>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+      <div class="col-sm-offset-1 col-sm-10">
+        {% for q in questions %}
+          <div class="row">
+          <div class="col-sm-2 col-xs-2">
+            <span>{{ candidates[q.target] }}</span><br><span>{{ categories[q.category] }}</span>
+          </div>
+          <div class="col-sm-6 col-xs-10">
+            <h4>{{ q.text }}</h4>
+          </div>
+          <div class="col-sm-2 col-xs-6" style="text-align: center;">
+            <h2 id="q-rate-{{ q.id }}">{{ q.rate }}</h2>
+          </div>
+          <div class="col-sm-2 col-xs-6" style="text-align: center;">
+            <button id="q-button-{{ q.id }}" type="button" class="btn btn-xs btn-success" style="margin-top: 10px; width: 50px; height: 50px;" onclick="rateQuestion({{ q.id }})">Vote!</button>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
