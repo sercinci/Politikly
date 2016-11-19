@@ -5,47 +5,44 @@
 {% block content %}
   {% include "menu.html.twig" %}
   <div class="container-fluid">
-    <div class="row">
+    <div class="row" id="homeImage">
       <div class="col-sm-offset-1 col-sm-10">
-        <form id="ask-form">
-          <div class="form-group">
-            <label class="formLabel">Question</label>
-            <input type="text" class="form-control" max="200" placeholder="Question (Max 200 charactères)" name="text" required>
-            <label class="formLabel">Candidats:</label>
-            <select name="target">
-              {% for cand in candidates %}
-                <option value="{{ loop.index0 }}">{{cand}}</option>
-              {% endfor %}
-            </select><br>
-            <label class="formLabel">Categories:</label>
-            <select name="category">
-              {% for cat in categories %}
-                <option value="{{ loop.index0 }}">{{cat}}</option>
-              {% endfor %}
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Posez vos questions!</button>
-        </form> 
+        <div style="text-align: center;">
+          <h1>Quelle est votre question?</h1>
+        </div>
+        <div class="row">
+          <form id="ask-form">
+            <div class="form-group" style="margin-bottom: 20px;">
+              <div class="col-sm-offset-2 col-sm-4 col-xs-12" style="margin-top: 15px;">
+                <label class="formLabel">Ma question s'adresse à:</label><br>
+                <select name="target">
+                  {% for cand in candidates %}
+                    <option value="{{ loop.index0 }}">{{cand}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col-sm-4 col-xs-12" style="margin-top: 15px;">
+                <label class="formLabel">Ma question concerne:</label><br>
+                <select name="category">
+                  {% for cat in categories %}
+                    <option value="{{ loop.index0 }}">{{cat}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col-sm-offset-2 col-sm-8 col-xs-12" style="margin-top: 15px;">
+                <label class="formLabel">Ma question:</label><br>
+                <textarea class="form-control" rows="4" name="text" max="200" placeholder="Tapez votre message (max. 200 caractères)" required></textarea>
+              </div>
+            </div>
+            <div style="text-align: center; clear: both;">
+              <button type="submit" class="btn"><img src="/images/publierblanc.png" style="width: 20px; height: 20px;"> Publier</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <div class="row" style="margin-top: 50px;">
       <div class="col-sm-offset-1 col-sm-10">
-        <!--{% for q in questions %}
-          <div class="row">
-          <div class="col-sm-2 col-xs-2">
-            <span>{{ candidates[q.target] }}</span><br><span>{{ categories[q.category] }}</span>
-          </div>
-          <div class="col-sm-6 col-xs-10">
-            <h4 style="word-break: break-all;">{{ q.text }}</h4>
-          </div>
-          <div class="col-sm-2 col-xs-6" style="text-align: center;">
-            <h2 id="q-rate-{{ q.id }}">{{ q.rate }}</h2>
-          </div>
-          <div class="col-sm-2 col-xs-6" style="text-align: center;">
-            <button id="q-button-{{ q.id }}" type="button" class="btn btn-xs btn-success" style="margin-top: 10px; width: 50px; height: 50px;" onclick="rateQuestion({{ q.id }})">Vote!</button>
-          </div>
-        </div>
-        {% endfor %}-->
         <div class="row">
           <div class="col-xs-12" style="text-align: center; margin-bottom: 40px;">
             <h1>LES QUESTIONS</h1>

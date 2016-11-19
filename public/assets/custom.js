@@ -51,3 +51,7 @@ function rateAnswer(id){
         }
     });
 }
+
+$(document).ready(function(){
+    $('#homeImage').height(window.innerHeight);
+})

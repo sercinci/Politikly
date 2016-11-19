@@ -45,7 +45,9 @@ class ViewCtrl
 
     public function renderIndex($req, $res, $arg)
     {
-        $questions = Question::all()->sortByDesc('rate');
+        //$questions = Question::all()->sortByDesc('rate');
+        $questions = Question::orderBy('rate', 'desc')->get();
+        
         return $this->view->render($res, 'index.html.twig', [
             'candidates' => $this->candidates,
             'categories' => $this->categories,
@@ -55,7 +57,7 @@ class ViewCtrl
 
     public function renderQuestions($req, $res, $arg)
     {
-        $questions = Question::all()->sortByDesc('rate');
+        $questions = Question::orderBy('rate', 'desc')->get();
         return $this->view->render($res, 'question.html.twig', [
             'candidates' => $this->candidates,
             'categories' => $this->categories,
