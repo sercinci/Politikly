@@ -15,7 +15,7 @@
         <div class="row">
           <form id="ask-form">
             <div class="form-group" style="margin-bottom: 20px;">
-              <div class="col-sm-offset-2 col-sm-4 col-xs-12" style="margin-top: 15px;">
+              <div class="col-md-offset-2 col-md-4 col-xs-12" style="margin-top: 15px;">
                 <label class="formLabel">Ma question s'adresse à:</label><br>
                 <select name="target">
                   <option value="" disabled selected>Choisissez un destinataire</option>
@@ -24,7 +24,7 @@
                   {% endfor %}
                 </select>
               </div>
-              <div class="col-sm-4 col-xs-12" style="margin-top: 15px;">
+              <div class="col-md-4 col-xs-12" style="margin-top: 15px;">
                 <label class="formLabel">Ma question concerne:</label><br>
                 <select name="category">
                   <option value="" disabled selected>Choisissez une thématique</option>
@@ -33,7 +33,7 @@
                   {% endfor %}
                 </select>
               </div>
-              <div class="col-sm-offset-2 col-sm-8 col-xs-12" style="margin-top: 15px;">
+              <div class="col-md-offset-2 col-md-8 col-xs-12" style="margin-top: 15px;">
                 <label class="formLabel">Ma question:</label><br>
                 <textarea class="form-control" rows="4" name="text" maxlength="255" placeholder="Tapez votre message (max. 255 caractères)" style="resize: none;" required></textarea>
               </div>
@@ -53,7 +53,7 @@
             <h1 class="bigTitle">LES QUESTIONS</h1>
             <h3 class="smallTitle">DE LA SEMAINE</h3>
           </div>
-          <div class="col-sm-4" style="text-align: center; padding: 0 30px; margin-bottom: 40px;">
+          <div class="col-md-4" style="text-align: center; padding: 0 30px; margin-bottom: 40px;">
             <div class="topBoxes">
               <div style="text-align: left; border-bottom: solid 2px; margin-bottom: 10px; padding-bottom: 5px;"><img src="/images/cat-{{ questions[0].category }}.png" style="width: 24px; height: 24px;"> <span class="categoryTitle">{{ categories[questions[0].category] }}</span></div>
               <div><span class="smallText">POUR</span></div>
@@ -62,7 +62,7 @@
             </div>
             <button id="q-button-{{ questions[0].id }}" type="button" class="btn btnUncheck" style="margin-top: 10px; width: 100px;" onclick="rateQuestion({{ questions[0].id }})"><strong id="q-rate-{{ questions[0].id }}">{{ questions[0].rate }}</strong> <img src="/images/check.png" style="width: 20px; height: 20px;"></button>
           </div>
-          <div class="col-sm-4" style="text-align: center; padding: 0 30px; margin-bottom: 40px;">
+          <div class="col-md-4" style="text-align: center; padding: 0 30px; margin-bottom: 40px;">
             <div class="topBoxes">
               <div style="text-align: left; border-bottom: solid 2px; margin-bottom: 10px; padding-bottom: 5px;"><img src="/images/cat-{{ questions[1].category }}.png" style="width: 24px; height: 24px;"> <span class="categoryTitle">{{ categories[questions[1].category] }}</span></div>
               <div><span class="smallText">POUR</span></div>
@@ -71,7 +71,7 @@
             </div>
             <button id="q-button-{{ questions[1].id }}" type="button" class="btn btnUncheck" style="margin-top: 10px; width: 100px;" onclick="rateQuestion({{ questions[1].id }})"><strong id="q-rate-{{ questions[1].id }}">{{ questions[1].rate }}</strong> <img src="/images/check.png" style="width: 20px; height: 20px;"></button>
           </div>
-          <div class="col-sm-4" style="text-align: center; padding: 0 30px; margin-bottom: 40px;">
+          <div class="col-md-4" style="text-align: center; padding: 0 30px; margin-bottom: 40px;">
             <div class="topBoxes">
               <div style="text-align: left; border-bottom: solid 2px; margin-bottom: 10px; padding-bottom: 5px;"><img src="/images/cat-{{ questions[2].category }}.png" style="width: 24px; height: 24px;"> <span class="categoryTitle">{{ categories[questions[2].category] }}</span></div>
               <div><span class="smallText">POUR</span></div>
@@ -91,13 +91,13 @@
             <h1 class="bigTitle">LES REPONSES</h1>
             <h3 class="smallTitle">DE LA SEMAINE</h3>
           </div>
-          <div class="col-sm-4" style="text-align: center; padding: 0 30px; margin-bottom: 40px;">
+          <div class="col-md-4" style="text-align: center; padding: 0 30px; margin-bottom: 40px;">
             <img src="/images/ans-1.png" style="width: 256px; height: 256px;">
           </div>
-          <div class="col-sm-4" style="text-align: center; padding: 0 30px; margin-bottom: 40px;">
+          <div class="col-md-4" style="text-align: center; padding: 0 30px; margin-bottom: 40px;">
             <img src="/images/ans-2.png" style="width: 256px; height: 256px;">
           </div>
-          <div class="col-sm-4" style="text-align: center; padding: 0 30px; margin-bottom: 40px;">
+          <div class="col-md-4" style="text-align: center; padding: 0 30px; margin-bottom: 40px;">
             <img src="/images/ans-3.png" style="width: 256px; height: 256px;">
           </div>
         </div>
