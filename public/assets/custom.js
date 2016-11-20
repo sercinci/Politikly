@@ -54,4 +54,8 @@ function rateAnswer(id){
 
 $(document).ready(function(){
     $('#homeImage').height(window.innerHeight);
+    if (window.innerHeight < $('body').height()) {
+        $('#footer').css('position', 'relative');
+    }
 })
+
