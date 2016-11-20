@@ -12,12 +12,12 @@ class ViewCtrl
     public $opts = array('http' => array('ignore_errors' => true));
     protected $candidates = array(
         'François Hollande',
-        'Alain Jupé',
+        'Alain Juppé',
         'Marine Lepen',
         'Emmanuel Macron',
-        'Jean Luc Mélanchon',
+        'Jean-Luc Mélenchon',
         'Enmarche',
-        'Europe Écologieles Verts',
+        'Europe Écologie les Verts',
         'Le Front National',
         'Les Républicains',
         'Parti Socialiste'
