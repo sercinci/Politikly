@@ -9,7 +9,8 @@
       <div class="col-sm-offset-1 col-sm-10">
         <div style="text-align: center;">
           <img class="hidden-xs" src="/images/politikly-white.png" style="width: 150px; margin-top: 20px;">
-          <h1>Quelle est votre question?</h1>
+          <h1 class="hidden-xs">Quelle est votre question?</h1>
+          <h1 class="visible-xs" style="font-size: 38px;">Quelle est votre question?</h1>
         </div>
         <div class="row">
           <form id="ask-form">
@@ -34,7 +35,7 @@
               </div>
               <div class="col-sm-offset-2 col-sm-8 col-xs-12" style="margin-top: 15px;">
                 <label class="formLabel">Ma question:</label><br>
-                <textarea class="form-control" rows="4" name="text" max="200" placeholder="Tapez votre message (max. 200 caractères)" style="resize: none;" required></textarea>
+                <textarea class="form-control" rows="4" name="text" maxlength="255" placeholder="Tapez votre message (max. 255 caractères)" style="resize: none;" required></textarea>
               </div>
             </div>
             <div style="text-align: center; clear: both;">
