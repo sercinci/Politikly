@@ -39,9 +39,9 @@ function rateAnswer(id){
         url: "/api/rateanswer/" + id,
         success: function(data){
             $('#a-rate-' + id).text(data.rate);
-            setTimeout(function(){
-              $('#a-button-' + id).prop('disabled', false);
-            }, 1000);
+            $('#a-button-' + id).removeClass('btnUncheck')
+                .addClass('btnCheck');
+            $('#a-button-' + id + ' img').attr('src', '/images/like-white.png');
         },
         error: function(data){
             console.log(data)

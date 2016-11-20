@@ -46,8 +46,8 @@ class ViewCtrl
     public function renderIndex($req, $res, $arg)
     {
         //$questions = Question::all()->sortByDesc('rate');
-        $questions = Question::orderBy('rate', 'desc')->get();
-        
+        $questions = Question::orderBy('rate', 'desc')->where('top', 0)->get();
+
         return $this->view->render($res, 'index.html.twig', [
             'candidates' => $this->candidates,
             'categories' => $this->categories,
@@ -57,7 +57,7 @@ class ViewCtrl
 
     public function renderQuestions($req, $res, $arg)
     {
-        $questions = Question::orderBy('rate', 'desc')->get();
+        $questions = Question::orderBy('rate', 'desc')->where('top', 0)->get();
         return $this->view->render($res, 'question.html.twig', [
             'candidates' => $this->candidates,
             'categories' => $this->categories,
@@ -99,6 +99,18 @@ class ViewCtrl
         
         if ($question->save()) {
             return $res->withJson(array('rate' => $question->rate));
+        } else {
+            return $res->withStatus(500); 
+        }
+    }
+
+    public function rateAnswer($req, $res, $arg)
+    {
+        $answer = Answer::find($arg['id']);
+        $answer->rate = $answer->rate + 1;
+        
+        if ($answer->save()) {
+            return $res->withJson(array('rate' => $answer->rate));
         } else {
             return $res->withStatus(500); 
         }

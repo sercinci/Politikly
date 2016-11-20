@@ -131,3 +131,15 @@ h4 {
 #answersContainer {
     background-color: #e9ecf3;
 }
+
+#footer {
+    height: 70px;
+    width: 100%;
+    background-color: #2a3c56;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#footer img {
+    margin: 0 10px;
+}

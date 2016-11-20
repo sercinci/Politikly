@@ -1,6 +1,6 @@
 {% extends "layout.html.twig" %}
 
-{% block title %}Politik - Answers{% endblock %}
+{% block title %}Politik - Réponses{% endblock %}
 
 {% block content %}
   {% include "menu.html.twig" with {'page': 'answers'} %}
@@ -19,14 +19,14 @@
                 <div class="col-sm-10 col-xs-12">
                   <h4 style="word-break: break-word;">{{ a.question.text }}</h4>
                 </div>
-                <div class="col-sm-10 col-xs-12">
+                <div class="col-sm-10 col-xs-12" style="margin-top: 10px;">
                   <p style="word-break: break-word;">{{ a.text }}</p>
                 </div>
                 <!--<div class="col-sm-2 col-xs-6" style="text-align: center;">
                   <h2 id="q-rate-{{ q.id }}" style="margin-top: 10px;">{{ q.rate }}</h2>
                 </div>-->
                 <div class="col-sm-2 col-xs-12" style="text-align: center;">
-                  <button id="q-button-{{ q.id }}" type="button" class="btn btnUncheck" style="margin-top: 10px; width: 100px;" onclick="rateAnswer({{ a.id }})"><strong>{{ a.rate }} "J'aime"</strong> <img src="/images/check.png" style="width: 20px; height: 20px;"></button>
+                  <button id="a-button-{{ a.id }}" type="button" class="btn btnUncheck" style="margin-top: 10px;" onclick="rateAnswer({{ a.id }})"><strong id="a-rate-{{ a.id }}">{{ a.rate }}</strong> <strong>"J'aime"</strong> <img src="/images/like-green.png" style="width: 20px; height: 20px;"></button>
                 </div>
               </div>
             </div>
