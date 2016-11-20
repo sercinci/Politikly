@@ -11,21 +11,18 @@
           <div class="row">
             <div class="panel panel-default">
               <div class="panel-body">
-                <div class="col-sm-2 col-xs-12">
+                <div class="col-md-2 col-xs-12">
                   <img alt="{{ candidates[a.question.target] }}" src="/images/can-{{ a.question.target }}.png" style="width: 50px; height: 50px;">
                   <span>&nbsp;</span>
                   <img alt="{{ categories[a.question.category] }}" src="/images/cat-{{ a.question.category }}.png" style="width: 50px; height: 50px;">
                 </div>
-                <div class="col-sm-10 col-xs-12">
+                <div class="col-md-10 col-xs-12">
                   <h4 style="word-break: break-word;">{{ a.question.text }}</h4>
                 </div>
-                <div class="col-sm-10 col-xs-12" style="margin-top: 10px;">
+                <div class="col-md-10 col-xs-12" style="margin-top: 10px;">
                   <p style="word-break: break-word;">{{ a.text }}</p>
                 </div>
-                <!--<div class="col-sm-2 col-xs-6" style="text-align: center;">
-                  <h2 id="q-rate-{{ q.id }}" style="margin-top: 10px;">{{ q.rate }}</h2>
-                </div>-->
-                <div class="col-sm-2 col-xs-12" style="text-align: center;">
+                <div class="col-md-2 col-xs-12" style="text-align: center;">
                   <button id="a-button-{{ a.id }}" type="button" class="btn btnUncheck" style="margin-top: 10px;" onclick="rateAnswer({{ a.id }})"><strong id="a-rate-{{ a.id }}">{{ a.rate }}</strong> <strong>"J'aime"</strong> <img src="/images/like-green.png" style="width: 20px; height: 20px;"></button>
                 </div>
               </div>
