@@ -20,6 +20,11 @@
     box-shadow: 3px 2px 2.82px 0.18px rgba(0,0,0,0.13);
 }
 
+.btnUncheck:hover, .btnCheck:hover {
+    background-color: #3db39e;
+    color: #FFFFFF;
+}
+
 .btnCheck {
     background-color: #3db39e;
     border-color: #3db39e;
@@ -121,4 +126,8 @@ h4 {
     font-family: 'Open Sans', sans-serif;
     font-size: 28px;
     font-weight: 700;
+}
+
+#answersContainer {
+    background-color: #e9ecf3;
 }
